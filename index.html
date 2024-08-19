@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldersgate Youth Summit 2024</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="ays.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-text">
+            <img src="Group 1.png" class="logos">
+        <h1>Aldersgate Youth Summit 2024</h1>
+        <div class="countdown" id="countdown">
+            00 Months : 00 Days : 00 Hours : 00 Minutes
+        </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <h2>Register Now</h2>
+        <form action="https://form2channel.com/" method="POST" enctype="multipart/form-data" class="registration-form">
+            <input type="hidden" name="formto_email" value="aldersgateyouthservice@gmail.com">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="tel">Tel:</label>
+            <input type="tel" id="tel" name="tel" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <p>I wish to attend the Aldersgate Youth Summit scheduled for 27th - 29th December 2024 at the Pentecost Convention Centre and hereby make payment as required.</p>
+
+            <label>HEALTH: Do you have any health condition the organizers of the Summit need to know about?</label>
+            <input type="radio" id="health_yes" name="health" value="yes"> Yes
+            <input type="radio" id="health_no" name="health" value="no" checked> No
+
+           <br> <label><br>FEEDING: Do you have any dietary restrictions (Is there any food you do not eat?)</label>
+            <input type="radio" id="diet_yes" name="diet" value="yes"> Yes
+            <input type="radio" id="diet_no" name="diet" value="no" checked> No
+            <textarea id="diet_details" name="diet_details" placeholder="If Yes, state" rows="4"></textarea>
+                <label for="signature">Signature:</label>
+                <input type="text" id="signature" name="signature" placeholder="Put your initials here" required>
+                <label for="Payment">Upload Screenshot of Payment:</label>
+                <input type="file" id="payment" name="payment" accept="image/*">
+                <br>
+                <br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+            <h3>CONSENT FOR PERSONS AGED BELOW 18</h3>
+            <label for="guardian_name">Guardian's Name:</label>
+            <input type="text" id="guardian_name" name="guardian_name" required>
+
+            <label for="ward_name">Ward's Name:</label>
+            <input type="text" id="ward_name" name="ward_name" required>
+
+            <label for="guardian_signature">Guardian's Signature:</label>
+            <input type="text" id="guardian_signature" name="guardian_signature" placeholder="Put your initials here" required>
+
+            <button type="submit" class="submit-btn">Register Now</button>
+            <input type="hidden" name="formto_redirect" value="Thank you page to redirect visitors to">
+            <input type="hidden" name="formto_error" value="Page to redirect visitors to when something goes wrong">
+        </form>
+    </section>
+
+    <script>
+        // Countdown Timer
+        const countdown = () => {
+            const eventDate = new Date("December 27, 2024 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const months = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeLeft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("countdown").innerHTML = `${months} Months : ${days} Days : ${hours} Hours : ${minutes} Minutes`;
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+
+</body>
+</html>
